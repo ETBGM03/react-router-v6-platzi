@@ -1,0 +1,32 @@
+Curso react: navegacion con react router dom V6
+
+* BrowserRouter vs HashRouter
+
+La version 6 de rrd nos provee 3 provider para nuestras rutas BrowserRouter, HashRouter y MemoryRouter
+BrowserRouter -> forma normal '/hola'
+HashRouter -> '/#/hola'
+MemoryRouter -> tener fe
+
+
+* Link vs NavLink
+
+Ambos son componentes que nos permite hacer redirecciones en nuestra página sin recargar la página
+lo cual hace que nuestra app sea mucho más rapida y tenga un mejor performance. Una diferencia sutil
+es que NavLink nos devuelve una prop `isActive` el cual indica si el usuario está en link como tal y así nosotros
+poder tomar o ejecutar alguna acción.
+
+* useParams
+
+hook que nos permite digamos coger los parametros enviados a través de la url, y usarlos para 
+cualquier uso (fetch data, cambiar data y más).
+
+Nota: para crear rutas dinámicas, podemos indicar despues de la ruta ../:nameParam
+
+*useNavigate
+
+hooks que nos permite hace navegación de manera más programatica.
+Podemos pasarle un -1 como argumento y será igual a dar back (<-) arrow en el navegador.
+
+* Outlet: Nested Routes
+
+Componente de la v6 que nos ayuda a trabajar con nested routes (es decir, rutas dentro de otras = rutas anidadas)
