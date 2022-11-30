@@ -1,14 +1,18 @@
 import { createContext, useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 
+const adminList = ["Camilo", "Camila"];
+
 const AuthContext = createContext();
 
 function AuthContextProvider({ children }) {
   const [user, setUser] = useState(null);
 
   const login = ({ userName }) => {
+    const isAdmin = adminList.find((admin) => admin === userName);
     setUser({
       userName,
+      isAdmin,
     });
   };
 

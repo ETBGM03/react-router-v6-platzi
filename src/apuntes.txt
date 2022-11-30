@@ -30,3 +30,8 @@ Podemos pasarle un -1 como argumento y será igual a dar back (<-) arrow en el n
 * Outlet: Nested Routes
 
 Componente de la v6 que nos ayuda a trabajar con nested routes (es decir, rutas dentro de otras = rutas anidadas)
+
+*Roles y permisos
+
+- autenticación -> se refiere a saber quien es la persona en cuestión.
+- autorización -> se refiere a que role tiene esa persona que pasó por la autenticación.
