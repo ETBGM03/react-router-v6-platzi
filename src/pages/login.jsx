@@ -1,18 +1,21 @@
 import React, { Fragment, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
 
 const Login = () => {
   const [userName, setUserName] = useState("");
-  const auth = useAuth();
+  const { login, user } = useAuth();
   const navigate = useNavigate();
   const handleSubmit = (e) => {
-    //navigate
     e.preventDefault();
-    auth.login({ userName });
+    login({ userName });
     navigate("/profile");
     setUserName("");
   };
+
+  if (user) {
+    return <Navigate to="/profile" />;
+  }
   return (
     <Fragment>
       <form action="">

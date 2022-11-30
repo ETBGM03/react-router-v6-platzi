@@ -7,7 +7,7 @@ import Home from "./pages/home";
 import Logout from "./pages/logout";
 import Profile from "./pages/profile";
 import Login from "./pages/login";
-import { AuthContextProvider } from "./context/auth-context";
+import { AuthContextProvider, AuthPrivateRoute } from "./context/auth-context";
 
 function App() {
   return (
@@ -20,8 +20,22 @@ function App() {
             <Route path=":slug" element={<BlogPost />} />
           </Route>
           <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/logout"
+            element={
+              <AuthPrivateRoute>
+                <Logout />
+              </AuthPrivateRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <AuthPrivateRoute>
+                <Profile />
+              </AuthPrivateRoute>
+            }
+          />
           <Route path="*" element={<p>No found</p>} />
         </Routes>
       </AuthContextProvider>
